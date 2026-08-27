@@ -395,3 +395,37 @@ h2 { margin-bottom: 0; font-size: clamp(3.2rem, 7vw, 7rem); font-weight: 700; le
   .core-orbit { animation: none; }
   .core-crystal { transform: translate(-50%, -50%) rotateZ(45deg); }
 }
+/* Profile Photo */
+.about-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 250px;
+}
+
+.profile-photo {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 45px rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .about-photo {
+    min-width: auto;
+    margin: 2rem 0;
+  }
+
+  .profile-photo {
+    width: 200px;
+    height: 200px;
+  }
+}
