@@ -214,19 +214,45 @@ export default function Home() {
             <div><p className="eyebrow">ABOUT THE BUILDER</p><h2 id="about-title">Curiosity is<br /><em>the toolkit.</em></h2></div>
           </div>
           <div className="about-layout">
-            <div className="about-copy reveal-item delay-1">
-            <p className="large-copy">I’m <span className="highlight">Jaswanth Durga Reddy Velagala</span> — a final-year BTech student building useful systems at the intersection of software and intelligence.</p>
+  <div className="about-copy reveal-item delay-1">
+    <p className="large-copy">
+      I’m <span className="highlight">Jaswanth Durga Reddy Velagala</span> — a final-year BTech student building useful systems at the intersection of software and intelligence.
+    </p>
 
-              <p>I’m pursuing a BTech in Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning at JNTUH University College of Engineering Wanaparthy, graduating in 2027. Based in Wanaparthy, I’m interested in software engineering, machine learning, and building practical systems for real users.
-              </p>
-              <a className="inline-link" href="#process">See how I work <MoveUpRight size={15} /></a>
-            </div>
-            <div className="about-metrics reveal-item delay-2">
-              <div className="metric-card"><span>03</span><p>years turning<br />questions into builds</p></div>
-              <div className="metric-card accent"><span>18</span><p>curious people<br />interviewed so far</p></div>
-              <div className="metric-card wide"><span>∞</span><p>new tabs open<br />at any given time</p></div>
-            </div>
-          </div>
+    <p>
+      I’m pursuing a BTech in Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning at JNTUH University College of Engineering Wanaparthy, graduating in 2027. Based in Wanaparthy, I’m interested in software engineering, machine learning, and building practical systems for real users.
+    </p>
+
+    <a className="inline-link" href="#process">
+      See how I work <MoveUpRight size={15} />
+    </a>
+  </div>
+
+  <div className="about-photo reveal-item delay-2">
+    <img
+      src="/profile.png"
+      alt="Jaswanth Durga Reddy Velagala"
+      className="profile-photo"
+    />
+  </div>
+
+  <div className="about-metrics reveal-item delay-2">
+    <div className="metric-card">
+      <span>03</span>
+      <p>years turning<br />questions into builds</p>
+    </div>
+
+    <div className="metric-card accent">
+      <span>18</span>
+      <p>curious people<br />interviewed so far</p>
+    </div>
+
+    <div className="metric-card wide">
+      <span>∞</span>
+      <p>new tabs open<br />at any given time</p>
+    </div>
+  </div>
+</div>
         </section>
 
         <section className="work-section section-pad" id="work" aria-labelledby="work-title">
