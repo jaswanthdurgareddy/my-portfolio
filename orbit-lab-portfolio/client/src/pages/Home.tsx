@@ -229,12 +229,39 @@ export default function Home() {
   </div>
 
   <div className="about-photo reveal-item delay-2">
+  <div className="photo-hud">
+    <div className="hud-ring ring-1" />
+    <div className="hud-ring ring-2" />
+    <div className="hud-ring ring-3" />
+
+    <span className="orbit-dot dot-1" />
+    <span className="orbit-dot dot-2" />
+    <span className="orbit-dot dot-3" />
+
+    <div className="hud-corner corner-tl" />
+    <div className="hud-corner corner-tr" />
+    <div className="hud-corner corner-bl" />
+    <div className="hud-corner corner-br" />
+
+    <div className="scan-line" />
+
     <img
       src="/profile.png"
       alt="Jaswanth Durga Reddy Velagala"
       className="profile-photo"
     />
+
+    <div className="photo-status">
+      <span className="status-dot" />
+      SYSTEM ACTIVE
+    </div>
+
+    <div className="photo-id">
+      <span>SUBJECT_01</span>
+      <span>AI / ML</span>
+    </div>
   </div>
+</div>
 
   <div className="about-metrics reveal-item delay-2">
     <div className="metric-card">
