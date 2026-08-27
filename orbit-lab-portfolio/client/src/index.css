@@ -395,37 +395,136 @@ h2 { margin-bottom: 0; font-size: clamp(3.2rem, 7vw, 7rem); font-weight: 700; le
   .core-orbit { animation: none; }
   .core-crystal { transform: translate(-50%, -50%) rotateZ(45deg); }
 }
-/* Profile Photo */
+/* =========================================
+   FUTURISTIC PROFILE MODULE
+========================================= */
+
 .about-photo {
+  position: relative;
+  width: 330px;
+  height: 330px;
+  min-width: 330px;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 250px;
+  isolation: isolate;
 }
 
-.profile-photo {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
+/* Outer futuristic frame */
+.about-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--accent);
+  clip-path: polygon(
+    12% 0,
+    88% 0,
+    100% 12%,
+    100% 88%,
+    88% 100%,
+    12% 100%,
+    0 88%,
+    0 12%
+  );
+  opacity: 0.7;
+  animation: framePulse 3s ease-in-out infinite;
+}
+
+/* Rotating orbital ring */
+.about-photo::after {
+  content: "";
+  position: absolute;
+  width: 290px;
+  height: 290px;
+  border: 1px dashed var(--accent);
   border-radius: 50%;
-  border: 2px solid var(--accent);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0.6;
+  animation: profileOrbit 18s linear infinite;
 }
 
-.profile-photo:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 45px rgba(255, 255, 255, 0.3);
+/* Your actual photo */
+.profile-photo {
+  position: relative;
+  z-index: 2;
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 2px solid var(--accent);
+
+  box-shadow:
+    0 0 0 10px rgba(255, 255, 255, 0.03),
+    0 0 30px rgba(255, 255, 255, 0.12),
+    0 0 80px rgba(255, 255, 255, 0.06);
+
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+/* Hover effect */
+.about-photo:hover .profile-photo {
+  transform: scale(1.04);
+  box-shadow:
+    0 0 0 12px rgba(255, 255, 255, 0.04),
+    0 0 45px rgba(255, 255, 255, 0.2),
+    0 0 100px rgba(255, 255, 255, 0.1);
+}
+
+/* Small futuristic dots */
+.about-photo .profile-photo {
+  animation: profileFloat 5s ease-in-out infinite;
+}
+
+@keyframes profileOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes profileFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes framePulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.98);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
 }
 
 @media (max-width: 768px) {
   .about-photo {
+    width: 280px;
+    height: 280px;
     min-width: auto;
-    margin: 2rem 0;
+    margin: 2rem auto;
+  }
+
+  .about-photo::after {
+    width: 245px;
+    height: 245px;
   }
 
   .profile-photo {
-    width: 200px;
-    height: 200px;
+    width: 190px;
+    height: 190px;
   }
 }
